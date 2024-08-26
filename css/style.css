@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body {
+    line-height: 1.2;
+    color: #b1bf5a !important;
+    font-family: 'Play' !important;
+    font-size: 100% !important;
+    background-color: #6a3e1e !important;
+    background-position: 0 100% !important;
+    background-repeat: repeat !important;
+    background-image: url(../images/back.jpg) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* ------------- Верхнее меню ------------ */
+.topnav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto max-content 50px;
+    grid-template-rows: 30px;
+    padding: 3px;
+    margin: 0;
+    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page_title {
+    font-size: large;
+    font-weight: 600;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #b1bf5a;
+    text-align: right;
+    padding: 2px 16px;
+    text-decoration: none;
+}
+
+.user_name {
+    display: block;
+    float: right;
+    min-width: min-content;
+}
+
+.topnav a:hover {
+    background-color: #584333;
+    color: #f5d627;
+}
+
+.top_menu_btn {
+    display: block;
+    float: right;
+    margin: 1px 1px;
+}
+
+.dropbtn {
+    display: block;
+    float: left;
+    margin: 3px auto;
+    padding: 0;
+    background: black;
+}
+
+.barbtn {
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #dd9a0a;
+    color: black;
+}
+
+/* --------- Выпадающее меню (скрыто по умолчанию) ----------- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 3px;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.356);
+    z-index: 1;
+    padding: 20px 3px 10px 20px;
+    margin: 2px;
+    font-family: 'Roboto', sans-serif;
+    border: #946c15 1px solid;
+    border-radius: 5px;
+}
+
+/* на мальненьких экранах уменьшаем прозрачность, т.к. меню поверх текста */
+@media (max-width: 768px) {
+    .dropdown-content {
+        background-color: #6a3e1edd;
+    }
+}
+
+@media (min-width: 769px) {
+    .dropdown-content {
+        background-color: #6a3e1e55;
+    }
+}
+
+/* с помощью JS,добавляем этот класс к .dropdown-content, когда пользователь нажимает на кнопку выпадающего списка */
+.show {
+    display: block;
+}
+
+.widget-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #eeba49;
+    font-size: 16px;
+    padding-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-left: 2px solid #eec366;
+}
+
+.widget-list {
+    padding: 5px;
+    list-style: none;
+}
+
+.dropdown-content p {
+    padding: 10px;
+}
+
+.widget-list a:before {
+    content: "\2014";
+    margin-right: 14px;
+}
+
+.widget-list a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    padding: 6px 0;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #c4cc87;
+    transition: all 0.3s ease;
+}
+
+.widget-list a:hover {
+    color: #d6ee25;
+    /*#dd9a0a;*/
+    padding-left: 15px;
+    font-size: 17 px;
+    font-weight: 700;
+}
+
+.widget-list a:hover::before {
+    content: "+ ";
+}
+
+/* ----------------- Форма регистрация/Входа ---------------- */
+.input-box {
+    display: block;
+    background-color: #6a3e1e;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.356);
+    padding: 0;
+    margin: 100px auto;
+    font-family: 'Roboto', sans-serif;
+    border: #946c15 1px solid;
+    border-radius: 5px;
+    max-width: 480px;
+}
+
+.login-box {
+    max-width: 480px;
+}
+
+.profile-box {
+    max-width: 680px;
+}
+
+.login-box-title {
+    background-color: #dd9a0a;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 18pt;
+    color: #333;
+    padding: 7px 0 7px 20px;
+}
+
+.login-box-note {
+    margin: 0;
+    padding: 20px 20px;
+    vertical-align: bottom;
+    font-size: 90%;
+    text-align: center;
+    color: #c4cc87;
+    border-bottom: 1px solid #9b501a;
+}
+
+.login-box-note>a {
+    color: #dd9a0a;
+    text-decoration: none;
+}
+
+.login-box-note>a:hover {
+    color: #d6ee25;
+    text-decoration: none;
+}
+
+.login-box-error {
+    margin: 0;
+    padding: 20px 20px;
+    vertical-align: bottom;
+    font-size: 110%;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    ;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-auto-rows: 60px;
+    padding: 20px 20px 10px 40px;
+    margin: auto;
+}
+
+.login-form>.inpt {
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #b5b5b5;
+    color: #666;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 100%;
+}
+
+.login-form>label {
+    margin: 0;
+    width: 90%;
+    padding: 10px 0;
+    vertical-align: bottom;
+    font-size: 95%;
+    color: #dd9a0a;
+}
+
+.login-form>.btn {
+    padding: 7px 5px;
+    margin: auto;
+    border: 1px solid #946c15;
+    cursor: pointer;
+    font-size: 12pt;
+    width: 110px;
+    color: #000;
+    background-color: #f19709;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------ index.php ---------------------- */
+.page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-block {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px 0px rgb(0 0 0 / 50%);
+    background-color: #6a3e1edd;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.content-block a {
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 600;
+    color: #cddd63;
+}
+
+.content-block a:hover {
+    color: #e2ff07;
+}
+
+.main-header {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    min-height: 70px;
+    margin: 10px 0 20px;
+    padding: 0px 18px 0px 7px;
+    line-height: 1.5;
+}
+
+.content {
+    display: flex;
+    /*margin: 10px 0;*/
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: -10px;
+}
+
+/* на мальненьких экранах уменьшаем прозрачность, т.к. меню поверх текста */
+@media (max-width: 768px) {
+    .side-content {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .side-content {
+        display: flex;
+    }
+}
+
+.side-content {
+    flex: 1;
+    margin: 0;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+}
+
+.side-content-item {
+    display: block;
+    padding: 1em 10px;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-align: left;
+    color: #c4cc87;
+    transition: .3s linear;
+}
+
+.side-content-item:hover {
+    color: #d6ee25;
+    padding-left: 25px;
+}
+
+.main-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 10px;
+    min-height: 380px;
+}
+
+.main-content-item {
+    height: min-content;
+    margin: 0 0 20px;
+    padding: 15px;
+    position: relative;
+}
+
+.slide-text {
+    left: 0px;
+    margin: 15px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 50px;
+    color: #d6ee25;
+    padding: 10px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.text-top {
+    top: 0px;
+}
+
+.text-bottom {
+    bottom: 0px;
+}
+
+.footer {
+    margin: 5px 0;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.footer .links {}
+
+.footer .links>a {
+    color: #c4cc87;
+    padding: 5px 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer .links>a:hover {
+    color: #d6ee25;
+}
+
+.footer .copyright {
+    margin-top: 10px;
+    padding: 10px 0 0;
+    color: #c4cc87;
+    font-size: small;
+    border-top: #c4cc87 1px solid;
+}
